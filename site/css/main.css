@@ -161,7 +161,86 @@ main{
 
 
 /* ---------------- aside ----------------- */
-
+.aside_bg{
+   position: fixed;
+   left: 0; right: 0; top: 0; bottom: 0;
+   background: rgba(0,0,0,0.7);
+   opacity: 0;
+   transition:0.35s;
+   z-index: 10;
+   visibility: hidden;
+}
+.aside_open .aside_bg{
+   visibility: visible;
+   opacity: 1;
+}
+aside{
+   width: 85%;
+   position: fixed;
+   left: 0; right: 0; top: 0;
+   height: 100vh;
+   background: #3F539C;
+   z-index: 11;
+   display: flex;
+   flex-direction: column;
+}
+aside header{
+   background: linear-gradient(#D95E46, #8C3D2D);
+   flex:0.5;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+aside header img{
+   width: 108px;
+   height: 108px;
+}
+aside header h1{
+   color:#fff;
+   font-size:21px;
+   margin-top: 15px;
+}
+aside .aside_content{
+   flex: 1;
+   display: flex;
+   align-content: space-between;
+   flex-wrap: wrap;
+}
+aside .aside_content > *{
+   width: 100%;
+}
+.aside_content .categories li{
+   height: 76px;
+   padding: 0 15px;
+   line-height: 76px;
+}
+.aside_content .categories li:hover{
+   background: rgba(0,0,0,.1);
+}
+.aside_content .categories li a{
+   color:#fff;
+   display: block;
+   border-bottom:1px solid rgba(0,0,0,0.2);
+}
+.aside_links a{
+   color:rgba(255,255,255,0.6);
+   font-size:24px;
+   position: absolute;
+}
+.aside_links a span{
+   width: 20px;
+   height: 20px;
+   background: #3F539C;
+   border: 1px solid #B2BAD7;
+   border-radius: 50%;
+   position: absolute;
+   right: -10px;
+   top: -10px;
+   font-size:12px;
+   text-align: center;
+   line-height: 18px;
+}
 /* ---------------- category ----------------- */
 
 /* ---------------- details ----------------- */
