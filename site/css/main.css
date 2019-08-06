@@ -52,6 +52,7 @@ main{
    left: 0;
    right: 0;
    z-index: 1;
+   transition: left 0.4s ease-in;
 }
 .main-header .header_inner{
    height: 75px;
@@ -158,8 +159,6 @@ main{
 .latest li footer form input:checked + label span:last-child{
    opacity: 1;
 }
-
-
 /* ---------------- aside ----------------- */
 .aside_bg{
    position: fixed;
@@ -177,12 +176,17 @@ main{
 aside{
    width: 85%;
    position: fixed;
-   left: 0; right: 0; top: 0;
+   left: -100%;
+   top: 0;
    height: 100vh;
    background: #3F539C;
    z-index: 11;
    display: flex;
    flex-direction: column;
+   transition:left 0.4s ease-in;
+}
+.aside_open aside{
+   left: 0;
 }
 aside header{
    background: linear-gradient(#D95E46, #8C3D2D);
@@ -223,10 +227,15 @@ aside .aside_content > *{
    display: block;
    border-bottom:1px solid rgba(0,0,0,0.2);
 }
+.aside_links{
+   display: flex;
+   justify-content: space-between;
+   padding:0 15px 20px;
+}
 .aside_links a{
    color:rgba(255,255,255,0.6);
    font-size:24px;
-   position: absolute;
+   position: relative;
 }
 .aside_links a span{
    width: 20px;
@@ -240,6 +249,19 @@ aside .aside_content > *{
    font-size:12px;
    text-align: center;
    line-height: 18px;
+}
+body, header{
+   position: relative;
+   left: 0;
+   transition: left 0.4s ease-in;
+}
+body.aside_open{
+   left: 85%;
+   position: fixed;
+}
+body.aside_open .main-header{
+   left: 85%;
+   right: -85%;
 }
 /* ---------------- category ----------------- */
 

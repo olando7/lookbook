@@ -14,4 +14,14 @@ $(function(){
       }
    });
 
+   $asideToggleBtn = $('.aside_toggle');
+   $asideBg = $('.aside_bg');
+
+   $asideToggleBtn.click(function(){
+      $('body').addClass('aside_open');
+   });
+   $asideBg.click(function(){
+      $('body').removeClass('aside_open');
+   });
+
 });
